@@ -71,7 +71,8 @@ public class TriangleArray {
         }
         System.out.println("");
         System.out.println(solution(A));
-        //System.out.println(solution2(A));
+        System.out.println(solution2(A));
+        System.out.println(solution3(A));
     }
 
     /**
@@ -92,6 +93,20 @@ public class TriangleArray {
                     (A[q] + A[r] > A[p]) &&
                     (A[r] + A[p] > A[q]))
                 return 1;
+        }
+        return 0;
+    }
+
+    public static int solution3(int[] A){
+        Arrays.sort(A);
+        int p,q,r;
+        for(int i=0;i<A.length-2;i++){
+            p=A[i];
+            q=A[i+1];
+            r=A[i+2];
+            if(r-p>q){
+                return 1;
+            }
         }
         return 0;
     }
